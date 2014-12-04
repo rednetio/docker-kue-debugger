@@ -1,6 +1,6 @@
 {
   "name": "kue-debugger",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Workers for Krommatik backend",
   "main": "worker.js",
   "private": true,
