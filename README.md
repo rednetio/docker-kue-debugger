@@ -15,7 +15,7 @@ docker run --rm -it \
 	-e KUE_PREFIX=kue \
 	-e REDIS_DATABASE=3 \
 	--link="redis:redis" \
-	kue-debugger
+	rednetio/kue-debugger
 ```
 
 
@@ -23,7 +23,7 @@ docker run --rm -it \
 
 ```
 kue-worker:
-  image: rednetio/kue-debugger:1.0.0
+  image: rednetio/kue-debugger
   links:
    - "redis:redis"
   environment:
