@@ -20,9 +20,30 @@ jobs.on('job enqueue', function(id,type){
 
   jobs.process(type, function(job, done){
       console.log( 'Job: Job %s of %s got queued', id, type );
+      jobHasard(job.data, callback);
   });
-
 });
+
+function jobHasard(data, callback){ 
+
+    function hasardBoolean(){
+        return Math.random()<.5; // Readable, succint
+    }
+
+    var tempsAttente = Math.random() * 10000;
+    console.log("Job hasard ! hou hou ! La roue tourne... ("+tempsAttente+"ms)");
+    setTimeout(function(callback){
+
+      if ( hasardBoolean() ) {
+        console.log("Booh! looser!");
+        return callback(new Error());
+      } else {
+        console.log("Yeah you won !");
+        return callback(null, "OK");
+      };
+
+    }, 2000, callback);
+};
 
 kue.app.listen(3000);
 

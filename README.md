@@ -22,7 +22,7 @@ docker run --rm -it \
 #### Example for integration in fig.yml
 
 ```
-kue-worker:
+debugger:
   image: rednetio/kue-debugger
   links:
    - "redis:redis"
