@@ -16,11 +16,11 @@ var jobs = kue.createQueue({
 console.log("Connected to Kue. Waiting for job...");
 
 jobs.on('job enqueue', function(id,type){
-  console.log( 'Queue: Job %s of %s got queued', id, type );
+  console.log( 'Queue: Job %s of %s got queud', id, type );
 
   jobs.process(type, function(job, done){
-      console.log( 'Job: Job %s of %s got queued', id, type );
-      jobHasard(job.data, callback);
+      console.log( 'Job: Job %s of %s is executed', job.id, job.type );
+      jobHasard(job.data, done);
   });
 });
 

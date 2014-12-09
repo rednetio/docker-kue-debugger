@@ -10,7 +10,7 @@
     "url": "https://github.com/rednetio/docker-kue-debugger.git"
   },
   "dependencies": {
-    "kue": "^0.8.9",
+    "kue": "git://github.com/vladif/kue.git#master",
     "nconf": "^0.6.9"
   }
 }
