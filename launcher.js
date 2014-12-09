@@ -1,6 +1,6 @@
 "use strict";
 
-var nconf       = require("nconf").argv().env("_");
+var nconf       = require("nconf").argv().env();
 var kue         = require('kue');
 
 // Create Kue connection
